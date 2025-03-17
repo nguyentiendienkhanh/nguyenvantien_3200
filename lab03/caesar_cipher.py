@@ -12,7 +12,7 @@ class MyApp(QMainWindow):
         self.ui.btn_decrypt.clicked.connect(self.call_api_decrypt)
     
     def call_api_encrypt(self):
-        url = "http://127.0.0.1:5000/caesar/encrypt"
+        url = "http://127.0.0.1:5000/api/caesar/encrypt"
         payload = {
             "plain_text": self.ui.plainTextEdit.toPlainText(),
             "key": self.ui.textEdit.toPlainText()
@@ -35,7 +35,7 @@ class MyApp(QMainWindow):
             print("❌ Request failed:", str(e))
 
     def call_api_decrypt(self):
-        url = "http://127.0.0.1:5000/caesar/decrypt"
+        url = "http://127.0.0.1:5000/api/caesar/decrypt"
         payload = {
             "cipher_text": self.ui.plainTextEdit_2.toPlainText(),
             "key": self.ui.textEdit.toPlainText()
